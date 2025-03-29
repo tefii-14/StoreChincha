@@ -80,10 +80,12 @@ public class Registrar extends AppCompatActivity {
 
                         try{
                             boolean guardado = response.getBoolean("status");
-                            if (guardado)
+                            if (guardado) {
                                 showToast("Proceso ejecutado correctamente");
-                            else
+                                limpiarCampos();
+                            }else {
                                 showToast("No se pudo registrar");
+                            }
                         }
                         catch (Exception e) {
                             Log.e("ErrorWS", e.toString());
@@ -120,6 +122,14 @@ public class Registrar extends AppCompatActivity {
 
     private void  showToast(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    // NUEVA FUNCIÓN PARA LIMPIAR LOS CAMPOS DESPUÉS DEL REGISTRO
+    private void limpiarCampos() {
+        edtTipo.setText("");
+        edtGenero.setText("");
+        edtTalla.setText("");
+        edtPrecio.setText("");
     }
 
     private void loadUI(){

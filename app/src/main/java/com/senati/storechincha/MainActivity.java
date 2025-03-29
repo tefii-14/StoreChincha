@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnRegistrar, btnListar, btnBuscar;
+    Button btnRegistrar, btnListar, btnBuscar, btnSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
                 openActivity(Buscar.class);
             }
         });
+
+        // Evento para salir
+        btnSalir.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Cierra todas las actividades anteriores
+            startActivity(intent);
+            finish(); // Cierra esta actividad
+        });
     }
 
     private void openActivity(Class activityName){
@@ -59,5 +67,6 @@ public class MainActivity extends AppCompatActivity {
         btnRegistrar = findViewById(R.id.btnRegistrar);
         btnListar = findViewById(R.id.btnListar);
         btnBuscar = findViewById(R.id.btnBuscar);
+        btnSalir = findViewById(R.id.btnSalir);
     }
 }

@@ -14,7 +14,7 @@
 
         <View
             android:layout_width="363dp"
-            android:layout_height="46dp"
+            android:layout_height="33dp"
             android:layout_weight="1" />
 
         <ImageView
@@ -120,17 +120,23 @@
             android:textColor="@android:color/white"
             android:padding="12dp"/>
 
-        <!-- Espacio -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"/>
-
         <!-- Botón para volver al Login -->
         <Button
             android:id="@+id/btnVolverLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Volver al Login"
+            android:textSize="16sp"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:padding="10dp"/>
+
+        <!-- Botón Cancelar -->
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
             android:textSize="16sp"
             android:backgroundTint="@color/black"
             android:textColor="@android:color/white"

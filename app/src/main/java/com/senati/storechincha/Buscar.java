@@ -38,7 +38,7 @@ public class Buscar extends AppCompatActivity {
     RequestQueue requestQueue;
 
     EditText edtID, edtTipo, edtGenero, edtTalla, edtPrecio;
-    Button btnBuscarProducto, btnActualizarProducto, btnEliminarProducto;
+    Button btnBuscarProducto, btnActualizarProducto, btnEliminarProducto, btnCancelarProducto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +56,21 @@ public class Buscar extends AppCompatActivity {
         btnActualizarProducto.setOnClickListener(v -> actualizarProducto());
         btnEliminarProducto.setOnClickListener(v -> confirmarEliminacion());
 
+        btnCancelarProducto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                limpiarCampos();
+                Toast.makeText(Buscar.this, "Formulario limpiado", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         adBotones(false);
     }
 
     private void adBotones(boolean sw) {
         btnEliminarProducto.setEnabled(sw);
         btnActualizarProducto.setEnabled(sw);
+        btnCancelarProducto.setEnabled(sw);
     }
 
     private void buscarProducto() {
@@ -148,6 +157,14 @@ public class Buscar extends AppCompatActivity {
         requestQueue.add(jsonRequest);
     }
 
+    private void limpiarCampos() {
+        edtID.setText("");
+        edtTipo.setText("");
+        edtGenero.setText("");
+        edtTalla.setText("");
+        edtPrecio.setText("");
+    }
+
 
     private void eliminarProducto() {
         requestQueue = Volley.newRequestQueue(this);
@@ -204,5 +221,6 @@ public class Buscar extends AppCompatActivity {
         btnBuscarProducto = findViewById(R.id.btnBuscarProducto);
         btnActualizarProducto = findViewById(R.id.btnActualizarProducto);
         btnEliminarProducto = findViewById(R.id.btnEliminarProducto);
+        btnCancelarProducto = findViewById(R.id.btnCancelarProducto);
     }
 }

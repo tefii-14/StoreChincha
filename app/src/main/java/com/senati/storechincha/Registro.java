@@ -22,7 +22,7 @@ import java.util.Map;
 public class Registro extends AppCompatActivity {
 
     private EditText etNombreCompleto, etNombreUsuario, etTelefono, etEmail, etPassword;
-    private Button btnRegistrar;
+    private Button btnRegistrar, btnCancelar, btnVolverLogin;
     private static final String URL_REGISTRO = "http://192.168.1.16/wstienda/app/services/service-usuario.php";
 
     @Override
@@ -36,11 +36,29 @@ public class Registro extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnCancelar = findViewById(R.id.btnCancelar);
+        btnVolverLogin = findViewById(R.id.btnVolverLogin);
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registrarUsuario();
+            }
+        });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                limpiarCampos();
+            }
+        });
+
+        btnVolverLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Registro.this, Login.class);
+                startActivity(intent);
+                finish(); // Cierra la actividad actual para evitar que el usuario vuelva con el botón "Atrás"
             }
         });
     }
@@ -103,4 +121,14 @@ public class Registro extends AppCompatActivity {
 
         queue.add(request);
     }
+
+    private void limpiarCampos() {
+        etNombreCompleto.setText("");
+        etNombreUsuario.setText("");
+        etTelefono.setText("");
+        etEmail.setText("");
+        etPassword.setText("");
+        Toast.makeText(this, "Campos limpiados", Toast.LENGTH_SHORT).show();
+    }
+
 }
