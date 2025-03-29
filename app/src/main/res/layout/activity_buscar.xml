@@ -4,9 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:padding="25dp"
+    android:padding="30dp"
+    android:background="@drawable/fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Buscar">
+
+    <View
+        android:layout_width="363dp"
+        android:layout_height="29dp"
+        android:layout_weight="0" />
+
+    <TextView
+        android:text="Buscar"
+        android:textSize="40dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtID"
+            android:inputType="number"
+            android:layout_weight="4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnBuscarProducto"
+            android:text="Buscar"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edtTipoEdit"
+        android:hint="Tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edtGeneroEdit"
+        android:hint="Genero"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edtTallaEdit"
+        android:hint="Talla"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edtPrecioEdit"
+        android:hint="Precio"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnActualizarProducto"
+        android:layout_marginTop="25dp"
+        android:text="Actualizar"
+        android:backgroundTint="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnEliminarProducto"
+        android:text="Eliminar"
+        android:backgroundTint="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

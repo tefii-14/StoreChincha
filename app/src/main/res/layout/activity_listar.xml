@@ -4,15 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:padding="25dp"
+    android:padding="30dp"
+    android:background="@drawable/fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Listar">
 
+    <View
+        android:layout_width="363dp"
+        android:layout_height="29dp"
+        android:layout_weight="0" />
 
     <TextView
         android:text="Listar"
-        android:textSize="30dp"
+        android:textSize="40dp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

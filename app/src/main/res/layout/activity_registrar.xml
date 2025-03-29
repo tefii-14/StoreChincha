@@ -5,15 +5,21 @@
     android:id="@+id/main"
     android:orientation="vertical"
     android:padding="30dp"
-    android:layout_marginTop="30dp"
+    android:background="@drawable/fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Registrar">
 
+    <View
+        android:layout_width="363dp"
+        android:layout_height="67dp"
+        android:layout_weight="0" />
+
     <TextView
         android:text="REGISTRAR"
-        android:textSize="30dp"
-        android:layout_marginBottom="30dp"
+        android:textSize="40dp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

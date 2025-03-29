@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="177dp"
+        android:layout_height="156dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/login" />
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesión"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="25dp"/>
+
+    <!-- Campo de Nombre de Usuario -->
+    <EditText
+        android:id="@+id/etNombreUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Nombre de Usuario"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawableLeft="@drawable/ic_user"
+        android:drawablePadding="10dp"/>
+
+    <!-- Espacio entre campos -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+
+    <!-- Campo de Contraseña -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Contraseña"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:inputType="textPassword"/>
+
+    <!-- Espacio entre campos -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <!-- Botón de Iniciar Sesión -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Iniciar Sesión"
+        android:textSize="20sp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginBottom="15dp"/>
+
+    <!-- Botón de Registro -->
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Crear Cuenta"
+        android:textSize="18sp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        android:padding="10dp"/>
+
+</LinearLayout>
